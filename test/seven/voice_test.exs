@@ -55,4 +55,22 @@ defmodule Seven.VoiceTest do
       assert Regex.match?(~r/^\d*\.?\d*$/, Enum.fetch!(split, 2))
     end
   end
+
+  @tag :voice_hangup
+  test "should hang up a call" do
+    use_cassette "voice_hangup" do
+      params = %{
+        json: 1,
+        text: "Hello, this is a very long message which gets converted to voice and read out loud to the given recipient. You can even customize this message by using SSML and other cool stuff. It is really handy and brings in a ton of returning customers. You should try it yourself, I am sure you will love it!",
+        to: "491716992343",
+      }
+      voice = Voice.post!(params)
+      call_id = voice.messages.first.id
+
+      res = Voice.hangup!(call_id)
+
+      assert res.success === true
+      assert res.error === nil
+    end
+  end
 end
