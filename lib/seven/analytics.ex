@@ -4,7 +4,7 @@ defmodule Seven.Analytics do
   alias HTTPoison.Response
   alias Seven.HTTPClient
 
-  @endpoint "analytics"
+  @endpoint "analytics/"
 
   @type group_by :: :country | :date | :label | :subaccount
   @type params :: {
@@ -53,10 +53,10 @@ defmodule Seven.Analytics do
   end
 
   @spec get(map()) :: {:ok, [map()]} | {:error, HTTPoison.Error | any()}
-  def get(params) do
+  def get(group_by, params) do
     qs = URI.encode_query(params)
 
-    case HTTPClient.get(@endpoint <> "?" <> qs) do
+    case HTTPClient.get(@endpoint <> group_by <> "?" <> qs) do
       {:ok, %Response{status_code: 200, body: body}} ->
         {:ok, Enum.map(body, fn a -> new(a) end)}
 
@@ -68,8 +68,8 @@ defmodule Seven.Analytics do
   end
 
   @spec get!(map()) :: [map()]
-  def get!(params) do
-    {:ok, analytics} = get(params)
+  def get!(params, group_by) do
+    {:ok, analytics} = get(params, group_by)
     analytics
   end
 
@@ -95,7 +95,7 @@ defmodule Seven.Analytics do
 
   @spec groupedBy!(group_by, map()) :: [map()]
   def groupedBy!(group_by, params) do
-    {:ok, analytics} = get!(Map.merge(params, %{"group_by" => group_by}))
+    {:ok, analytics} = get!(params, group_by)
     analytics
   end
 end
