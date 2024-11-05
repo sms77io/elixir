@@ -11,6 +11,24 @@ defmodule Seven.LookupTest do
     :ok
   end
 
+  @tag :lookup_rcs
+  test "rcs: returns a map on success" do
+    use_cassette "lookup_rcs" do
+      map = Lookup.rcs!("491716992343")
+
+      assert "T-Mobile" === map.carrier
+      assert "49" === map.country_code
+      assert "DE" === map.country_iso
+      assert "Germany" === map.country_name
+      assert "+491716992343" === map.international
+      assert "+49 171 6992343" === map.international_formatted
+      assert "0171 6992343" === map.national
+      assert "mobile" === map.network_type
+      assert true === map.success
+      assert true === Map.has_key?(map, :rcs_capabilities)
+    end
+  end
+
   @tag :lookup_format
   test "format: returns a map on success" do
     use_cassette "lookup_format" do
