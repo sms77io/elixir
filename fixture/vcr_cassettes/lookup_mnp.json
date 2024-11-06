@@ -1,28 +1,31 @@
 [
   {
     "request": {
-      "body": "json=1&number=491716992343&type=mnp",
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/lookup/mnp?number=491716992343",
       "headers": {
+        "Accept": "application/json",
         "X-Api-Key": "***",
         "SentWith": "elixir-test"
       },
-      "method": "post",
-      "options": [],
-      "request_body": "",
-      "url": "https://gateway.seven.io/api/lookup"
+      "method": "get",
+      "request_body": ""
     },
     "response": {
       "binary": false,
+      "type": "ok",
       "body": "{\"success\":true,\"code\":100,\"price\":0.005,\"mnp\":{\"country\":\"DE\",\"number\":\"+491716992343\",\"national_format\":\"0171 6992343\",\"international_formatted\":\"+49 171 6992343\",\"network\":\"Telekom Deutschland GmbH\",\"mccmnc\":\"26201\",\"isPorted\":false,\"network_type\":\"mobile\"}}",
       "headers": {
-        "Date": "Thu, 31 Aug 2023 12:14:15 GMT",
+        "Date": "Wed, 06 Nov 2024 14:55:47 GMT",
         "Server": "Apache",
+        "Upgrade": "h2",
+        "Connection": "Upgrade",
         "X-Frame-Options": "SAMEORIGIN",
         "Transfer-Encoding": "chunked",
         "Content-Type": "application/json"
       },
-      "status_code": 200,
-      "type": "ok"
+      "status_code": 200
     }
   }
 ]

@@ -32,11 +32,7 @@ defmodule Seven.LookupTest do
   @tag :lookup_format
   test "format: returns a map on success" do
     use_cassette "lookup_format" do
-      params = %{
-        number: "491716992343",
-        type: "format",
-      }
-      map = Lookup.get!(params)
+      map = Lookup.format!("491716992343")
 
       assert "T-Mobile" === map.carrier
       assert "49" === map.country_code
@@ -50,15 +46,10 @@ defmodule Seven.LookupTest do
     end
   end
 
-  @tag :lookup_mnp_json
+  @tag :lookup_mnp
   test "mnp: returns a map on success" do
-    use_cassette "lookup_mnp_json" do
-      params = %{
-        json: 1,
-        number: "491716992343",
-        type: "mnp",
-      }
-      map = Lookup.get!(params)
+    use_cassette "lookup_mnp" do
+      map = Lookup.mnp!("491716992343")
 
       assert 100 === map.code
       assert "DE" === map.mnp.country
@@ -73,27 +64,10 @@ defmodule Seven.LookupTest do
     end
   end
 
-  @tag :lookup_mnp_text
-  test "mnp: returns the operator on success" do
-    use_cassette "lookup_mnp_text" do
-      params = %{
-        number: "491716992343",
-        type: "mnp",
-      }
-      text = Lookup.get!(params)
-
-      assert "d1" === text
-    end
-  end
-
   @tag :lookup_hlr
   test "hlr: returns a map on success" do
     use_cassette "lookup_hlr" do
-      params = %{
-        number: "491716992343",
-        type: "hlr",
-      }
-      map = Lookup.get!(params)
+      map = Lookup.hlr!("491716992343")
 
       assert "DE" === map.country_code
       assert "Germany" === map.country_name
@@ -125,11 +99,7 @@ defmodule Seven.LookupTest do
   @tag :lookup_cnam
   test "cnam: returns a map on success" do
     use_cassette "lookup_cnam" do
-      params = %{
-        number: "491716992343",
-        type: "cnam",
-      }
-      map = Lookup.get!(params)
+      map = Lookup.cnam!("491716992343")
 
       assert "100" === map.code
       assert "GERMANY" === map.name
