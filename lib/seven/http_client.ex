@@ -52,6 +52,7 @@ defmodule Seven.HTTPClient do
     authToken = Config.api_key!()
     authKey = if String.starts_with?(authToken, "Bearer "), do: "Authorization", else: "X-Api-Key"
     [
+      {"Accept", "application/json"},
       {authKey, authToken},
       {"SentWith", Config.sent_with!()}
       | headers
