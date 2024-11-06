@@ -51,11 +51,11 @@ defmodule Seven.Journal do
     }
   end
 
-  @spec get(map()) :: {:ok, [map()]} | {:error, HTTPoison.Error | any()}
-  def get(params) do
+  @spec inbound(map()) :: {:ok, [map()]} | {:error, HTTPoison.Error | any()}
+  def inbound(params) do
     qs = URI.encode_query(params)
 
-    case HTTPClient.get(@endpoint <> "?" <> qs) do
+    case HTTPClient.get(@endpoint <> "/inbound?" <> qs) do
       {:ok, %Response{status_code: 200, body: body}} ->
         {:ok, Enum.map(body, fn a -> new(a) end)}
 
@@ -67,9 +67,75 @@ defmodule Seven.Journal do
     end
   end
 
-  @spec get!(map()) :: [map()]
-  def get!(params) do
-    {:ok, analytics} = get(params)
+  @spec inbound!(map()) :: [map()]
+  def inbound!(params) do
+    {:ok, analytics} = inbound(params)
+    analytics
+  end
+
+  @spec outbound(map()) :: {:ok, [map()]} | {:error, HTTPoison.Error | any()}
+  def outbound(params) do
+    qs = URI.encode_query(params)
+
+    case HTTPClient.get(@endpoint <> "/outbound?" <> qs) do
+      {:ok, %Response{status_code: 200, body: body}} ->
+        {:ok, Enum.map(body, fn a -> new(a) end)}
+
+      {:ok, %Response{status_code: _, body: body}} ->
+        {:error, body}
+
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @spec outbound!(map()) :: [map()]
+  def outbound!(params) do
+    {:ok, analytics} = outbound(params)
+    analytics
+  end
+
+  @spec replies(map()) :: {:ok, [map()]} | {:error, HTTPoison.Error | any()}
+  def replies(params) do
+    qs = URI.encode_query(params)
+
+    case HTTPClient.get(@endpoint <> "/replies?" <> qs) do
+      {:ok, %Response{status_code: 200, body: body}} ->
+        {:ok, Enum.map(body, fn a -> new(a) end)}
+
+      {:ok, %Response{status_code: _, body: body}} ->
+        {:error, body}
+
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @spec replies!(map()) :: [map()]
+  def replies!(params) do
+    {:ok, analytics} = replies(params)
+    analytics
+  end
+
+  @spec voice(map()) :: {:ok, [map()]} | {:error, HTTPoison.Error | any()}
+  def voice(params) do
+    qs = URI.encode_query(params)
+
+    case HTTPClient.get(@endpoint <> "/voice?" <> qs) do
+      {:ok, %Response{status_code: 200, body: body}} ->
+        {:ok, Enum.map(body, fn a -> new(a) end)}
+
+      {:ok, %Response{status_code: _, body: body}} ->
+        {:error, body}
+
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @spec voice!(map()) :: [map()]
+  def voice!(params) do
+    {:ok, analytics} = voice(params)
     analytics
   end
 end

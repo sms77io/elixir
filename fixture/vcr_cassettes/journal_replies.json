@@ -1,28 +1,29 @@
 [
   {
     "request": {
+      "options": [],
       "body": "",
+      "url": "https://gateway.seven.io/api/journal/replies?",
       "headers": {
+        "Accept": "application/json",
         "X-Api-Key": "***",
         "SentWith": "elixir-test"
       },
       "method": "get",
-      "options": [],
-      "request_body": "",
-      "url": "https://gateway.seven.io/api/journal?type=replies"
+      "request_body": ""
     },
     "response": {
       "binary": false,
+      "type": "ok",
       "body": "[{\"id\":\"45853445\",\"from\":\"491786116710\",\"to\":\"4915126716517\",\"text\":\"Hi, could you add one more graphic tee in medium? Thanks!\",\"timestamp\":\"2023-05-16 15:39:27\",\"price\":0},{\"id\":\"45837847\",\"from\":\"491771783130\",\"to\":\"491771783130\",\"text\":\"Hi @ Test\",\"timestamp\":\"2022-11-15 12:21:53\",\"price\":0},{\"id\":\"45836478\",\"from\":\"491771783130\",\"to\":\"491771783130\",\"text\":\"Hi friend!\",\"timestamp\":\"2022-11-07 14:24:35\",\"price\":0},{\"id\":\"45808831\",\"from\":\"4917661254799\",\"to\":\"491771783130\",\"text\":\"Ayayay\",\"timestamp\":\"2022-02-21 09:21:02\",\"price\":0}]",
       "headers": {
-        "Date": "Thu, 31 Aug 2023 12:06:54 GMT",
+        "Date": "Wed, 06 Nov 2024 15:05:22 GMT",
         "Server": "Apache",
         "X-Frame-Options": "SAMEORIGIN",
         "Transfer-Encoding": "chunked",
         "Content-Type": "application/json"
       },
-      "status_code": 200,
-      "type": "ok"
+      "status_code": 200
     }
   }
 ]

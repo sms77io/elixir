@@ -14,7 +14,7 @@ defmodule Seven.JournalTest do
   @tag :journal_outbound
   test "returns a list of outbound journals on success" do
     use_cassette "journal_outbound" do
-      for journal <- Journal.get!(%{type: "outbound"}) do
+      for journal <- Journal.outbound!(%{}) do
         assert Map.has_key?(journal, :connection)
         assert Map.has_key?(journal, :dlr)
         assert Map.has_key?(journal, :dlr_timestamp)
@@ -36,7 +36,7 @@ defmodule Seven.JournalTest do
   @tag :journal_inbound
   test "returns a list of inbound journals on success" do
     use_cassette "journal_inbound" do
-      for journal <- Journal.get!(%{type: "inbound"}) do
+      for journal <- Journal.inbound!(%{}) do
         assert Map.has_key?(journal, :from)
         assert Map.has_key?(journal, :id)
         assert Map.has_key?(journal, :price)
@@ -50,7 +50,7 @@ defmodule Seven.JournalTest do
   @tag :journal_replies
   test "returns a list of reply journals on success" do
     use_cassette "journal_replies" do
-      for journal <- Journal.get!(%{type: "replies"}) do
+      for journal <- Journal.replies!(%{}) do
         assert Map.has_key?(journal, :from)
         assert Map.has_key?(journal, :id)
         assert Map.has_key?(journal, :price)
@@ -64,7 +64,7 @@ defmodule Seven.JournalTest do
   @tag :journal_voice
   test "returns a list of voice journals on success" do
     use_cassette "journal_voice" do
-      for journal <- Journal.get!(%{type: "voice"}) do
+      for journal <- Journal.voice!(%{}) do
         assert Map.has_key?(journal, :duration)
         assert Map.has_key?(journal, :error)
         assert Map.has_key?(journal, :from)
