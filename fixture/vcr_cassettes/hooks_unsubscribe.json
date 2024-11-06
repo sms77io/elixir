@@ -1,28 +1,28 @@
 [
   {
     "request": {
-      "body": "action=subscribe&event_type=all&request_method=POST&target_url=https%3A%2F%2Fmy.tld%2F675e91e1-d412-4e1d-8be2-d20c9068e962",
+      "options": [],
+      "body": "target_url=https%3A%2F%2Fmy.tld%2Fc49c1346-634c-4f92-891e-ce069e24943f&event_type=all&request_method=POST",
+      "url": "https://gateway.seven.io/api/hooks",
       "headers": {
         "X-Api-Key": "***",
         "SentWith": "elixir-test"
       },
       "method": "post",
-      "options": [],
-      "request_body": "",
-      "url": "https://gateway.seven.io/api/hooks"
+      "request_body": ""
     },
     "response": {
       "binary": false,
-      "body": "{\"success\":true,\"code\":null,\"id\":2046}",
+      "type": "ok",
+      "body": "{\"success\":true,\"code\":null,\"id\":2813,\"error_message\":null}",
       "headers": {
-        "Date": "Thu, 31 Aug 2023 12:06:12 GMT",
+        "Date": "Wed, 06 Nov 2024 14:08:36 GMT",
         "Server": "Apache",
         "X-Frame-Options": "SAMEORIGIN",
         "Transfer-Encoding": "chunked",
         "Content-Type": "application/json"
       },
-      "status_code": 200,
-      "type": "ok"
+      "status_code": 200
     }
   }
 ]

@@ -1,21 +1,22 @@
 [
   {
     "request": {
-      "body": "action=subscribe&event_type=all&target_url=ThisShouldBeAUrl",
+      "options": [],
+      "body": "target_url=ThisShouldBeAUrl&event_type=all",
+      "url": "https://gateway.seven.io/api/hooks",
       "headers": {
         "X-Api-Key": "***",
         "SentWith": "elixir-test"
       },
       "method": "post",
-      "options": [],
-      "request_body": "",
-      "url": "https://gateway.seven.io/api/hooks"
+      "request_body": ""
     },
     "response": {
       "binary": false,
+      "type": "ok",
       "body": "{\"success\":false,\"code\":null,\"error_message\":\"Invalid URL\"}",
       "headers": {
-        "Date": "Thu, 31 Aug 2023 12:06:11 GMT",
+        "Date": "Wed, 06 Nov 2024 14:08:35 GMT",
         "Server": "Apache",
         "Upgrade": "h2",
         "Connection": "Upgrade",
@@ -23,8 +24,7 @@
         "Transfer-Encoding": "chunked",
         "Content-Type": "application/json"
       },
-      "status_code": 200,
-      "type": "ok"
+      "status_code": 200
     }
   }
 ]

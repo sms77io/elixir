@@ -14,10 +14,7 @@ defmodule Seven.HooksTest do
   @tag :hooks_read
   test "returns a list of hooks on success" do
     use_cassette "hooks_read" do
-      params = %{
-        action: "read",
-      }
-      map = Hooks.get!(params)
+      map = Hooks.list!()
 
       assert true === map.success
 
@@ -35,11 +32,10 @@ defmodule Seven.HooksTest do
   test "subscribe_fail: returns a map on success" do
     use_cassette "hooks_subscribe_fail" do
       params = %{
-        action: "subscribe",
         event_type: "all",
         target_url: "ThisShouldBeAUrl",
       }
-      map = Hooks.post!(params)
+      map = Hooks.subscribe!(params)
 
       assert false === map.success
       assert false === Map.has_key?(map, :id)
@@ -49,21 +45,15 @@ defmodule Seven.HooksTest do
   @tag :hooks_subscribe
   test "subscribe: returns a map on success" do
     use_cassette "hooks_subscribe" do
-      map = Hooks.post!(
+      map = Hooks.subscribe!(
         %{
-          action: "subscribe",
           event_type: "all",
           request_method: "POST",
           target_url: "https://my.tld/#{UUID.uuid4()}",
         }
       )
 
-      Hooks.post!(
-        %{
-          action: "unsubscribe",
-          id: map.id,
-        }
-      )
+      Hooks.unsubscribe!(map.id)
 
       assert true === map.success
       assert 0 < map.id
@@ -73,16 +63,15 @@ defmodule Seven.HooksTest do
   @tag :hooks_unsubscribe
   test "unsubscribe: returns a map on success" do
     use_cassette "hooks_unsubscribe" do
-      hook = Hooks.post!(
+      hook = Hooks.subscribe!(
         %{
-          action: "subscribe",
           event_type: "all",
           request_method: "POST",
           target_url: "https://my.tld/#{UUID.uuid4()}",
         }
       )
 
-      res = Hooks.post!(%{action: "unsubscribe", id: hook.id})
+      res = Hooks.unsubscribe!(hook.id)
       assert true === res.success
     end
   end
