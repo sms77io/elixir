@@ -52,7 +52,7 @@ defmodule Seven.Analytics do
     }
   end
 
-  @spec get(map()) :: {:ok, [map()]} | {:error, HTTPoison.Error | any()}
+  @spec get(String.t(), map()) :: {:ok, [map()]} | {:error, HTTPoison.Error | any()}
   def get(group_by, params) do
     qs = URI.encode_query(params)
 
@@ -67,9 +67,9 @@ defmodule Seven.Analytics do
     end
   end
 
-  @spec get!(map()) :: [map()]
-  def get!(params, group_by) do
-    {:ok, analytics} = get(params, group_by)
+  @spec get!(String.t(), map()) :: [map()]
+  def get!(group_by, params) do
+    {:ok, analytics} = get(group_by, params)
     analytics
   end
 
@@ -95,7 +95,7 @@ defmodule Seven.Analytics do
 
   @spec groupedBy!(group_by, map()) :: [map()]
   def groupedBy!(group_by, params) do
-    {:ok, analytics} = get!(params, group_by)
+    {:ok, analytics} = get!(group_by, params)
     analytics
   end
 end

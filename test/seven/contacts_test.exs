@@ -11,50 +11,27 @@ defmodule Seven.ContactsTest do
     :ok
   end
 
-  @edit_id 5720527
+  @tag :contacts
+  test "create, update, get, list, delete contact(s)" do
+    use_cassette "contacts" do
+      created = Contacts.create!(%{firstname: "Tim", lastname: "Testerson"})
+      IO.puts created.id
+#      inspect(created)
 
-  @tag :contacts_json_read
-  test "returns a list of contacts on success" do
-    use_cassette "contacts_json_read" do
-      list = Contacts.get!(%{action: "read", json: 1})
+      contact = Contacts.get!(created.id)
+      IO.puts contact
+      assert created.id === contact.id
+      contacts = Contacts.list!(%{limit: 1, search: "Testerson"})
+      assert 1 === length(contacts.data)
+      updated = Contacts.create!(%{id: created.id, firstname: "Timmy"})
+      assert created.firstname !== updated.firstname
+      Contacts.delete!(created.id)
 
-      for contact <- list do
-        assert 0 < String.to_integer(Map.get(contact, :ID))
-        assert Map.has_key?(contact, :Name)
-        assert Map.has_key?(contact, :Number)
-      end
-    end
-  end
-
-  @tag :contacts_json_create
-  test "returns a map on success" do
-    use_cassette "contacts_json_create" do
-      map = Contacts.get!(%{action: "write", json: 1})
-      Contacts.get!(%{action: "del", id: map.id})
-
-      assert "152" === map.return
-      assert 0 < map.id
-    end
-  end
-
-  @tag :contacts_json_edit
-  test "json_edit: returns a map on success" do
-    use_cassette "contacts_json_edit" do
-      contact = Contacts.get!(%{action: "write", json: 1})
-
-      map = Contacts.get!(%{action: "write", id: contact.id, nick: "Name #{System.os_time()}"})
-
-      assert "152" === map.return
-    end
-  end
-
-  @tag :contacts_json_del
-  test "json_del: returns a map on success" do
-    use_cassette "contacts_json_del" do
-      contact = Contacts.get!(%{action: "write", json: 1})
-      map = Contacts.get!(%{action: "del", id: contact.id, json: 1})
-
-      assert "152" === map.return
+#      for contact <- list do
+#        assert 0 < String.to_integer(Map.get(contact, :ID))
+#        assert Map.has_key?(contact, :Name)
+#        assert Map.has_key?(contact, :Number)
+#      end
     end
   end
 end

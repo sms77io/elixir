@@ -7,9 +7,18 @@
       <root url="file://$PROJECT_DIR$/_build/test/lib/elixir_uuid/ebin" />
       <root url="file://$PROJECT_DIR$/_build/dev/lib/elixir_uuid/ebin" />
       <root url="file://$PROJECT_DIR$/_build/test/lib/elixir_uuid/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/elixir_uuid/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/elixir_uuid/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/elixir_uuid/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/elixir_uuid/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/elixir_uuid/lib" />
+      <root url="file://$PROJECT_DIR$/deps/elixir_uuid/lib" />
+      <root url="file://$PROJECT_DIR$/deps/elixir_uuid/lib" />
+      <root url="file://$PROJECT_DIR$/deps/elixir_uuid/lib" />
+      <root url="file://$PROJECT_DIR$/deps/elixir_uuid/lib" />
       <root url="file://$PROJECT_DIR$/deps/elixir_uuid/lib" />
       <root url="file://$PROJECT_DIR$/deps/elixir_uuid/lib" />
       <root url="file://$PROJECT_DIR$/deps/elixir_uuid/lib" />

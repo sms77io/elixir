@@ -23,16 +23,16 @@ defmodule Seven.Lookup do
     response
   end
 
-  @spec rcs(word()) :: {:ok, map() | [map()]} | {:error, HTTPoison.Error | any()}
+  @spec rcs(String.t()) :: {:ok, map() | [map()]} | {:error, HTTPoison.Error | any()}
   def rcs(number) do
-    case HTTPClient.post(@endpoint <> "/rcs", {:form, %{"number" => number}}) do
+    case HTTPClient.get(@endpoint <> "/rcs?number=" <> number) do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
     end
   end
 
-  @spec rcs!(map()) :: map() | [map()]
+  @spec rcs!(String.t()) :: map() | [map()]
   def rcs!(number) do
     {:ok, response} = rcs(number)
     response

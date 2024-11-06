@@ -102,5 +102,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="makeup_c" level="project" />
+    <orderEntry type="library" name="easyhtml" level="project" />
+    <orderEntry type="library" name="cowboy" level="project" />
   </component>
 </module>

@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "options": [],
+      "body": "firstname=Tim&lastname=Testerson",
+      "url": "https://gateway.seven.io/api/contacts",
+      "headers": {
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "post",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"id\":14849613,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":\"\",\"home_number\":\"\",\"phone_number\":\"\",\"fullname\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":null,\"mail\":null,\"textarea\":null},\"groups\":[],\"created\":\"2024-11-06 14:42:15\"}",
+      "headers": {
+        "Date": "Wed, 06 Nov 2024 13:42:15 GMT",
+        "Server": "Apache",
+        "Upgrade": "h2",
+        "Connection": "Upgrade",
+        "Vary": "Accept-Encoding",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      "status_code": 200
+    }
+  }
+]

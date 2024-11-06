@@ -3,9 +3,18 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/_build/test/lib/jsx/ebin" />
       <root url="file://$PROJECT_DIR$/_build/test/lib/jsx/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/jsx/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/jsx/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/jsx/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/jsx/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/jsx/src" />
+      <root url="file://$PROJECT_DIR$/deps/jsx/src" />
+      <root url="file://$PROJECT_DIR$/deps/jsx/src" />
+      <root url="file://$PROJECT_DIR$/deps/jsx/src" />
+      <root url="file://$PROJECT_DIR$/deps/jsx/src" />
       <root url="file://$PROJECT_DIR$/deps/jsx/src" />
       <root url="file://$PROJECT_DIR$/deps/jsx/src" />
       <root url="file://$PROJECT_DIR$/deps/jsx/src" />

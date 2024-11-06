@@ -3,9 +3,18 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/_build/test/lib/exvcr/ebin" />
       <root url="file://$PROJECT_DIR$/_build/test/lib/exvcr/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/exvcr/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/exvcr/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/exvcr/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/test/lib/exvcr/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/exvcr/lib" />
+      <root url="file://$PROJECT_DIR$/deps/exvcr/lib" />
+      <root url="file://$PROJECT_DIR$/deps/exvcr/lib" />
+      <root url="file://$PROJECT_DIR$/deps/exvcr/lib" />
+      <root url="file://$PROJECT_DIR$/deps/exvcr/lib" />
       <root url="file://$PROJECT_DIR$/deps/exvcr/lib" />
       <root url="file://$PROJECT_DIR$/deps/exvcr/lib" />
       <root url="file://$PROJECT_DIR$/deps/exvcr/lib" />

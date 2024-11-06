@@ -24,7 +24,7 @@ defmodule Seven.Voice do
   end
 
 
-  @spec hangup(word()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
+  @spec hangup(String.t()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def hangup(call_id) do
     case HTTPClient.post(@endpoint <> "/" <> call_id <> "/hangup") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
@@ -33,9 +33,9 @@ defmodule Seven.Voice do
     end
   end
 
-  @spec hangup(word()) :: map()
+  @spec hangup(String.t()) :: map()
   def hangup!(call_id) do
-    {:ok, response} = hangup(params)
+    {:ok, response} = hangup(call_id)
     response
   end
 end
