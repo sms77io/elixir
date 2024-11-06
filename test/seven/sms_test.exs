@@ -22,28 +22,16 @@ defmodule Seven.SmsTest do
     end
   end
 
-  @tag :sms_default
-  test "returns a code on success" do
-    use_cassette "sms_default" do
-      assert 100 === Sms.post!(
-               %{
-                 text: "HI2U!",
-                 to: "49179999999999",
-               }
-             )
-    end
-  end
-
   @tag :sms_json
   test "returns a map on success" do
     use_cassette "sms_json" do
       params = %{
+        delay: "2050-12-12 00:00:00",
         from: "Elixir",
-        json: 1,
         text: "HI2U!",
         to: "+49179999999999",
       }
-      response = Sms.post!(params)
+      response = Sms.dispatch!(params)
 
       assert Map.has_key?(response, :debug)
       assert "direct" === response.sms_type

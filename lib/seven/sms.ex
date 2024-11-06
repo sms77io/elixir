@@ -21,8 +21,8 @@ defmodule Seven.Sms do
     response
   end
 
-  @spec post(map()) :: {:ok, String.t() | map()} | {:error, HTTPoison.Error | any()}
-  def post(params) do
+  @spec dispatch(map()) :: {:ok, String.t() | map()} | {:error, HTTPoison.Error | any()}
+  def dispatch(params) do
     case HTTPClient.post(@endpoint, {:form, Map.to_list(params)}) do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
 
@@ -32,9 +32,9 @@ defmodule Seven.Sms do
     end
   end
 
-  @spec post!(map()) :: String.t() | map()
-  def post!(params) do
-    {:ok, response} = post(params)
+  @spec dispatch!(map()) :: String.t() | map()
+  def dispatch!(params) do
+    {:ok, response} = dispatch(params)
     response
   end
 end
