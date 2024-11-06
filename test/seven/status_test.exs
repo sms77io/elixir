@@ -4,7 +4,7 @@ defmodule Seven.StatusTest do
   use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias Seven.{Journal, Status, TestUtil}
+  alias Seven.{Sms, Status, TestUtil}
 
   setup_all do
     HTTPoison.start
@@ -14,22 +14,30 @@ defmodule Seven.StatusTest do
   @tag :status
   test "returns a code on success" do
     use_cassette "status" do
-      journals = Journal.get!(%{type: "outbound"})
-      journal = List.first(journals)
+      params = %{
+        delay: "2050-12-12 00:00:00",
+        from: "Elixir",
+        text: "HI2U!",
+        to: "+49179999999999",
+      }
+      response = Sms.dispatch!(params)
+      msg = Enum.at(response.messages, 0)
+      id = msg.id
 
-      text = Status.get!(journal.id)
-      lines = TestUtil.split_by_line(text)
+      statuses = Status.get!(id)
+      assert assert 1 === Enum.count(statuses)
+      # status = statuses.first
 
-      assert 2 === Enum.count(lines)
-      assert Enum.fetch!(lines, 0) != "" # "DELIVERED"
-      assert Enum.fetch!(lines, 1) != "" # "2021-04-01 12:11:11.000"
+      Sms.delete!(id)
     end
   end
 
   @tag :status_fail
   test "returns an error code" do
     use_cassette "status_fail" do
-      assert 600 == Status.get!(0)
+      status = Status.get!(0)
+      IO.puts status
+      assert 600 == status
     end
   end
 end

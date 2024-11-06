@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/pricing?format=csv&country=de",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "get",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "\"\\\"countryCode\\\";\\\"countryName\\\";\\\"countryPrefix\\\";\\\"mcc\\\";\\\"mnc\\\";\\\"networkName\\\";\\\"features\\\";\\\"comment\\\";\\\"price\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"\\\";\\\"\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"33\\\";\\\"Argon Networks UG\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"10\\\";\\\"DB Netz AG\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"23\\\";\\\"Drillisch Online AG\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"14\\\";\\\"Lebara Ltd\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"\\\";\\\"Lycamobile Europe Ltd\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"25\\\";\\\"MTEL Deutschland GmbH\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"21\\\";\\\"Multiconnect GmbH\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"22\\\";\\\"sipgate Wireless GmbH\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"24\\\";\\\"TelcoVillage GmbH\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"03, 05, 07, 08, 11, 12, 20\\\";\\\"Telefonica Germany GmbH & Co. OHG\\\";\\\"\\\";\\\"3G start date: November 2005. 4G start date: July 1, 2011. 5G start date: October 2020. TADIG Network Code O2 is also used.\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"01, 06, 78\\\";\\\"Telekom Deutschland GmbH\\\";\\\"\\\";\\\"4G start date: June 1, 2011. 5G start date: July 3, 2019.\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"\\\";\\\"Tismi BV\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"\\\";\\\"Truphone GmbH\\\";\\\"\\\";\\\"\\\";\\\"0.075\\\"\\n\\\"DE\\\";\\\"Germany (Federal Republic of)\\\";\\\"49\\\";\\\"262\\\";\\\"02, 04, 09, 42, 43\\\";\\\"Vodafone GmbH\\\";\\\"\\\";\\\"4G start date: December 1, 2010. 5G start date: July 16, 2019. TADIG Network Code VF is also used.\\\";\\\"0.075\\\"\\n\"",
+      "headers": {
+        "Date": "Wed, 06 Nov 2024 15:07:17 GMT",
+        "Server": "Apache",
+        "Upgrade": "h2",
+        "Connection": "Upgrade",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  }
+]
