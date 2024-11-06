@@ -36,7 +36,7 @@ defmodule Seven.LookupTest do
         number: "491716992343",
         type: "format",
       }
-      map = Lookup.post!(params)
+      map = Lookup.get!(params)
 
       assert "T-Mobile" === map.carrier
       assert "49" === map.country_code
@@ -58,7 +58,7 @@ defmodule Seven.LookupTest do
         number: "491716992343",
         type: "mnp",
       }
-      map = Lookup.post!(params)
+      map = Lookup.get!(params)
 
       assert 100 === map.code
       assert "DE" === map.mnp.country
@@ -80,7 +80,7 @@ defmodule Seven.LookupTest do
         number: "491716992343",
         type: "mnp",
       }
-      text = Lookup.post!(params)
+      text = Lookup.get!(params)
 
       assert "d1" === text
     end
@@ -93,7 +93,7 @@ defmodule Seven.LookupTest do
         number: "491716992343",
         type: "hlr",
       }
-      map = Lookup.post!(params)
+      map = Lookup.get!(params)
 
       assert "DE" === map.country_code
       assert "Germany" === map.country_name
@@ -129,7 +129,7 @@ defmodule Seven.LookupTest do
         number: "491716992343",
         type: "cnam",
       }
-      map = Lookup.post!(params)
+      map = Lookup.get!(params)
 
       assert "100" === map.code
       assert "GERMANY" === map.name
