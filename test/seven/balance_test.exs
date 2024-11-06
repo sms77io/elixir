@@ -16,12 +16,12 @@ defmodule Seven.BalanceTest do
     use_cassette "balance" do
       tuple = Balance.get()
       status = elem(tuple, 0)
-      value = elem(tuple, 1)
+      balance = elem(tuple, 1)
 
       assert status === :error or status === :ok
 
        if (status === :ok) do
-         assert value >= 0.0
+         assert balance.currency === "EUR"
        end
     end
   end
@@ -29,8 +29,8 @@ defmodule Seven.BalanceTest do
   @tag :balance!
   test "returns balance on success" do
     use_cassette "balance!" do
-      float = Balance.get!()
-      assert float >= 0.0
+      balance = Balance.get!()
+      assert balance.currency === "EUR"
     end
   end
 end

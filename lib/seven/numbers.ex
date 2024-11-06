@@ -70,7 +70,7 @@ defmodule Seven.Numbers do
 
   @spec update(map()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def update(params) do
-    case HTTPClient.patch(@endpoint <> "/active/" <> params.number, {:form, Map.to_list(Map.delete(map, :number))}) do
+    case HTTPClient.patch(@endpoint <> "/active/" <> params.number, {:form, Map.to_list(Map.delete(params, :number))}) do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -94,7 +94,7 @@ defmodule Seven.Numbers do
 
   @spec delete!(String.t(), boolean()) :: map()
   def delete!(number, delete_immediately) do
-    {:ok, response} = delete(id, delete_immediately)
+    {:ok, response} = delete(number, delete_immediately)
     response
   end
 end

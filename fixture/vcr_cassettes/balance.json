@@ -1,31 +1,31 @@
 [
   {
     "request": {
+      "options": [],
       "body": "",
+      "url": "https://gateway.seven.io/api/balance",
       "headers": {
+        "Accept": "application/json",
         "X-Api-Key": "***",
         "SentWith": "elixir-test"
       },
       "method": "get",
-      "options": [],
-      "request_body": "",
-      "url": "https://gateway.seven.io/api/balance"
+      "request_body": ""
     },
     "response": {
       "binary": false,
-      "body": "54.218",
+      "type": "ok",
+      "body": "{\"amount\":31.11,\"currency\":\"EUR\"}",
       "headers": {
-        "Date": "Thu, 31 Aug 2023 11:43:14 GMT",
+        "Date": "Wed, 06 Nov 2024 14:45:04 GMT",
         "Server": "Apache",
         "Upgrade": "h2",
         "Connection": "Upgrade",
-        "Vary": "Accept-Encoding",
         "X-Frame-Options": "SAMEORIGIN",
         "Transfer-Encoding": "chunked",
-        "Content-Type": "text/plain; charset=utf-8"
+        "Content-Type": "application/json"
       },
-      "status_code": 200,
-      "type": "ok"
+      "status_code": 200
     }
   }
 ]
