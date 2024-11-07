@@ -8,7 +8,7 @@ defmodule Seven.Lookup do
 
   @spec cnam(String.t()) :: {:ok, map() | [map()]} | {:error, HTTPoison.Error | any()}
   def cnam(number) do
-    case HTTPClient.get(@endpoint <> "/cnam?number=" <> number) do
+    case HTTPClient.get(@endpoint <> "/cnam?number=#{number}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -23,7 +23,7 @@ defmodule Seven.Lookup do
 
   @spec format(String.t()) :: {:ok, map() | [map()]} | {:error, HTTPoison.Error | any()}
   def format(number) do
-    case HTTPClient.get(@endpoint <> "/format?number=" <> number) do
+    case HTTPClient.get(@endpoint <> "/format?number=#{number}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -38,7 +38,7 @@ defmodule Seven.Lookup do
 
   @spec hlr(String.t()) :: {:ok, map() | [map()]} | {:error, HTTPoison.Error | any()}
   def hlr(number) do
-    case HTTPClient.get(@endpoint <> "/hlr?number=" <> number) do
+    case HTTPClient.get(@endpoint <> "/hlr?number=#{number}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -53,7 +53,7 @@ defmodule Seven.Lookup do
 
   @spec mnp(String.t()) :: {:ok, map() | [map()]} | {:error, HTTPoison.Error | any()}
   def mnp(number) do
-    case HTTPClient.get(@endpoint <> "/mnp?number=" <> number) do
+    case HTTPClient.get(@endpoint <> "/mnp?number=#{number}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -68,7 +68,7 @@ defmodule Seven.Lookup do
 
   @spec rcs(String.t()) :: {:ok, map() | [map()]} | {:error, HTTPoison.Error | any()}
   def rcs(number) do
-    case HTTPClient.get(@endpoint <> "/rcs?number=" <> number) do
+    case HTTPClient.get(@endpoint <> "/rcs?number=#{number}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}

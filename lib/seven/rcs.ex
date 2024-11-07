@@ -23,7 +23,7 @@ defmodule Seven.RCS do
 
   @spec delete(String.t()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def delete(id) do
-    case HTTPClient.delete(@endpoint <> "/messages/" <> id) do
+    case HTTPClient.delete(@endpoint <> "/messages/#{id}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}

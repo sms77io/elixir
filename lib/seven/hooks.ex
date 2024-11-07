@@ -8,7 +8,7 @@ defmodule Seven.Hooks do
 
   @spec unsubscribe(pos_integer()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def unsubscribe(id) do
-    case HTTPClient.delete(@endpoint <> "?id=" <> id) do
+    case HTTPClient.delete(@endpoint <> "?id=#{id}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}

@@ -10,7 +10,7 @@ defmodule Seven.Pricing do
   def get(params) do
     qs = URI.encode_query(params)
 
-    case HTTPClient.get(@endpoint <> "?" <> qs) do
+    case HTTPClient.get(@endpoint <> "?#{qs}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
 
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}

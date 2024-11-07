@@ -58,7 +58,7 @@ defmodule Seven.Analytics do
   def get(group_by, params) do
     qs = URI.encode_query(params)
 
-    case HTTPClient.get(@endpoint <> group_by <> "?" <> qs) do
+    case HTTPClient.get(@endpoint <> group_by <> "?#{qs}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, Enum.map(body, fn a -> new(a) end)}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}

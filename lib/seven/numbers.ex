@@ -10,7 +10,7 @@ defmodule Seven.Numbers do
   def listAvailable(params) do
     qs = URI.encode_query(params)
 
-    case HTTPClient.get(@endpoint <> "/available?" <> qs) do
+    case HTTPClient.get(@endpoint <> "/available?#{qs}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -40,7 +40,7 @@ defmodule Seven.Numbers do
 
   @spec getActive(String.t()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def getActive(number) do
-    case HTTPClient.get(@endpoint <> "/active/" <> number) do
+    case HTTPClient.get(@endpoint <> "/active/#{number}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -70,7 +70,7 @@ defmodule Seven.Numbers do
 
   @spec update(map()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def update(params) do
-    case HTTPClient.patch(@endpoint <> "/active/" <> params.number, {:form, Map.to_list(Map.delete(params, :number))}) do
+    case HTTPClient.patch(@endpoint <> "/active/#{params.number}", {:form, Map.to_list(Map.delete(params, :number))}) do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -85,7 +85,7 @@ defmodule Seven.Numbers do
 
   @spec delete(String.t(), boolean()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def delete(number, delete_immediately) do
-    case HTTPClient.delete(@endpoint <> "/active/" <> number <> "?delete_immediately=" <> delete_immediately) do
+    case HTTPClient.delete(@endpoint <> "/active/#{number}?delete_immediately=#{delete_immediately}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}

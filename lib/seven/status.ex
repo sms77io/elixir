@@ -8,7 +8,7 @@ defmodule Seven.Status do
 
   @spec get(integer()) :: {:ok, [map()]} | {:error, HTTPoison.Error | any()}
   def get(msg_id) do
-    case HTTPClient.get(@endpoint <> "?msg_id=" <> msg_id) do
+    case HTTPClient.get(@endpoint <> "?msg_id=#{msg_id}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
