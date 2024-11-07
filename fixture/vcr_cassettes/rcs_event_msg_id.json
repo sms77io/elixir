@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "options": [],
+      "body": "event=READ&msg_id=",
+      "url": "https://gateway.seven.io/api/rcs/events",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "post",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"success\":false,\"error_code\":400,\"error_message\":\"\"}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 09:28:36 GMT",
+        "Server": "Apache",
+        "Upgrade": "h2",
+        "Connection": "Upgrade, close",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 400
+    }
+  }
+]

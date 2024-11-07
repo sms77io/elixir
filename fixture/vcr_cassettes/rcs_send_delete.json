@@ -1,0 +1,58 @@
+[
+  {
+    "request": {
+      "options": [],
+      "body": "delay=2050-12-12+00%3A00%3A00&text=HI2U&to=491716992343",
+      "url": "https://gateway.seven.io/api/rcs/messages",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "post",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"success\":\"100\",\"total_price\":0,\"balance\":29.605,\"debug\":\"false\",\"sms_type\":\"direct\",\"messages\":[{\"id\":\"77252938626\",\"sender\":\"testersinc_3888FC35\",\"recipient\":\"491716992343\",\"text\":null,\"encoding\":null,\"label\":null,\"parts\":1,\"udh\":null,\"is_binary\":null,\"price\":0,\"channel\":\"RCS\",\"fallback\":null,\"success\":false,\"error\":305,\"error_text\":\"SMS Text ung\\u00fcltig\"}]}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 09:34:18 GMT",
+        "Server": "Apache",
+        "Upgrade": "h2",
+        "Connection": "Upgrade",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/rcs/messages/77252938626",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "delete",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"code\":404,\"message\":\"Page not found\",\"errors\":[]}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 09:34:19 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 404
+    }
+  }
+]

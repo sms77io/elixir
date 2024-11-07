@@ -1,4 +1,4 @@
-defmodule Seven.ContactsTest do
+defmodule Seven.NumbersTest do
   @moduledoc "All tests regarding endpoint /groups belong here."
 
   use ExUnit.Case, async: true

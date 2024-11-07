@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/rcs/messages/",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "delete",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"error_code\":400,\"error_message\":\"Ung\\u00fcltige Rufnummer.\"}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 09:34:47 GMT",
+        "Server": "Apache",
+        "Upgrade": "h2",
+        "Connection": "Upgrade, close",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      "status_code": 400
+    }
+  }
+]

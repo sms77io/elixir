@@ -8,7 +8,7 @@ defmodule Seven.RCS do
 
   @spec dispatch(map()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def dispatch(params) do
-    case HTTPClient.post(@endpoint, {:form, Map.to_list(params)}) do
+    case HTTPClient.post(@endpoint <> "/messages", {:form, Map.to_list(params)}) do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
