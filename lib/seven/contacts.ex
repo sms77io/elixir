@@ -10,7 +10,7 @@ defmodule Seven.Contacts do
   def list(params) do
     qs = URI.encode_query(params)
 
-    case HTTPClient.get(@endpoint <> "?" <> qs) do
+    case HTTPClient.get(@endpoint <> "?#{qs}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -25,7 +25,7 @@ defmodule Seven.Contacts do
 
   @spec get(pos_integer()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def get(id) do
-    case HTTPClient.get(@endpoint <> "/" <> id) do
+    case HTTPClient.get(@endpoint <> "/#{id}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -55,7 +55,7 @@ defmodule Seven.Contacts do
 
   @spec update(map()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def update(params) do
-    case HTTPClient.patch(@endpoint <> "/" <> params.id, {:form, Map.to_list(params)}) do
+    case HTTPClient.patch(@endpoint <> "/#{params.id}", {:form, Map.to_list(Map.delete(params, :id))}) do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -70,7 +70,7 @@ defmodule Seven.Contacts do
 
   @spec delete(pos_integer()) :: {:ok, none()} | {:error, HTTPoison.Error | any()}
   def delete(id) do
-    case HTTPClient.delete(@endpoint <> "/" <> id) do
+    case HTTPClient.delete(@endpoint <> "/#{id}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}

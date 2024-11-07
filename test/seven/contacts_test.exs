@@ -4,7 +4,7 @@ defmodule Seven.ContactsTest do
   use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias Seven.{Contacts, TestUtil}
+  alias Seven.{Contacts}
 
   setup_all do
     HTTPoison.start
@@ -15,23 +15,19 @@ defmodule Seven.ContactsTest do
   test "create, update, get, list, delete contact(s)" do
     use_cassette "contacts" do
       created = Contacts.create!(%{firstname: "Tim", lastname: "Testerson"})
-      IO.puts created.id
-#      inspect(created)
+      assert created.id > 0
+      assert Map.has_key?(created, :properties)
 
       contact = Contacts.get!(created.id)
-      IO.puts contact
       assert created.id === contact.id
-      contacts = Contacts.list!(%{limit: 1, search: "Testerson"})
-      assert 1 === length(contacts.data)
-      updated = Contacts.create!(%{id: created.id, firstname: "Timmy"})
-      assert created.firstname !== updated.firstname
-      Contacts.delete!(created.id)
 
-#      for contact <- list do
-#        assert 0 < String.to_integer(Map.get(contact, :ID))
-#        assert Map.has_key?(contact, :Name)
-#        assert Map.has_key?(contact, :Number)
-#      end
+      contacts = Contacts.list!(%{limit: 1, search: "Testerson"})
+      filtered = Enum.filter(contacts.data, fn(x) -> x.id === created.id end)
+      assert 1 === length(filtered)
+
+      updated = Contacts.update!(%{id: created.id, firstname: "Timmy"})
+      assert created.properties.firstname !== updated.properties.firstname
+      Contacts.delete!(created.id)
     end
   end
 end

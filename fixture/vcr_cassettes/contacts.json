@@ -5,6 +5,7 @@
       "body": "firstname=Tim&lastname=Testerson",
       "url": "https://gateway.seven.io/api/contacts",
       "headers": {
+        "Accept": "application/json",
         "X-Api-Key": "***",
         "SentWith": "elixir-test"
       },
@@ -14,16 +15,124 @@
     "response": {
       "binary": false,
       "type": "ok",
-      "body": "{\"id\":14849613,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":\"\",\"home_number\":\"\",\"phone_number\":\"\",\"fullname\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":null,\"mail\":null,\"textarea\":null},\"groups\":[],\"created\":\"2024-11-06 14:42:15\"}",
+      "body": "{\"id\":14854206,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":\"\",\"home_number\":\"\",\"phone_number\":\"\",\"fullname\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":null,\"mail\":null,\"textarea\":null},\"groups\":[],\"created\":\"2024-11-07 09:24:53\"}",
       "headers": {
-        "Date": "Wed, 06 Nov 2024 13:42:15 GMT",
+        "Date": "Thu, 07 Nov 2024 08:24:52 GMT",
         "Server": "Apache",
         "Upgrade": "h2",
         "Connection": "Upgrade",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/contacts/14854206",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "get",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"id\":14854206,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:24:53\"}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:24:53 GMT",
+        "Server": "Apache",
         "Vary": "Accept-Encoding",
         "X-Frame-Options": "SAMEORIGIN",
         "Transfer-Encoding": "chunked",
-        "Content-Type": "text/plain;charset=utf-8"
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/contacts?search=Testerson&limit=1",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "get",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"pagingMetadata\":{\"offset\":0,\"count\":20,\"total\":20,\"limit\":30,\"has_more\":false},\"data\":[{\"id\":14849609,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-06 14:31:31\"},{\"id\":14849610,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-06 14:36:40\"},{\"id\":14849611,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-06 14:37:33\"},{\"id\":14849612,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-06 14:41:13\"},{\"id\":14849613,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-06 14:42:15\"},{\"id\":14854191,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:05:33\"},{\"id\":14854192,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:06:40\"},{\"id\":14854193,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:10:57\"},{\"id\":14854194,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:11:19\"},{\"id\":14854195,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:13:04\"},{\"id\":14854196,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:15:38\"},{\"id\":14854197,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:16:20\"},{\"id\":14854198,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:18:31\"},{\"id\":14854199,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:19:52\"},{\"id\":14854200,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:20:39\"},{\"id\":14854201,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:21:34\"},{\"id\":14854202,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:21:58\"},{\"id\":14854203,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:22:55\"},{\"id\":14854204,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"9EB384\"},\"properties\":{\"firstname\":\"Timmy\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:23:49\"},{\"id\":14854206,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"ADC4CE\"},\"properties\":{\"firstname\":\"Tim\",\"lastname\":\"Testerson\",\"mobile_number\":null,\"home_number\":null,\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":null,\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:24:53\"}]}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:24:53 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "firstname=Timmy",
+      "url": "https://gateway.seven.io/api/contacts/14854206",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "patch",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"id\":14854206,\"avatar\":null,\"validation\":{\"state\":null,\"timestamp\":null},\"initials\":{\"initials\":\"TT\",\"color\":\"9EB384\"},\"properties\":{\"firstname\":\"Timmy\",\"lastname\":\"Testerson\",\"mobile_number\":\"\",\"home_number\":\"\",\"email\":null,\"address\":null,\"postal_code\":null,\"city\":null,\"birthday\":null,\"notes\":null,\"text\":null,\"integer\":0,\"decimal\":0,\"date\":null,\"single_selection\":null,\"multiple_selection\":[],\"checkbox\":\"off\",\"phone_number\":\"\",\"mail\":null,\"textarea\":null,\"fullname\":null},\"groups\":[],\"created\":\"2024-11-07 09:24:53\"}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:24:53 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/contacts/14854206",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "delete",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"success\":true,\"error\":null}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:24:53 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
       },
       "status_code": 200
     }
