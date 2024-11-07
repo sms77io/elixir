@@ -1,0 +1,112 @@
+[
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/numbers/available?country=de&features_a2p_sms=true",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "get",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"availableNumbers\":[{\"country\":\"DE\",\"number\":\"4916096754993\",\"number_parsed\":\"+49 160 96754993\",\"fees\":{\"monthly\":{\"setup\":0,\"basic_charge\":0.5},\"annually\":{\"setup\":9.9,\"basic_charge\":238.8},\"sms_mo\":0,\"voice_mo\":0.01},\"features\":{\"sms\":true,\"a2p_sms\":true,\"voice\":true}},{\"country\":\"DE\",\"number\":\"4916096758726\",\"number_parsed\":\"+49 160 96758726\",\"fees\":{\"monthly\":{\"setup\":0,\"basic_charge\":0.5},\"annually\":{\"setup\":9.9,\"basic_charge\":238.8},\"sms_mo\":0,\"voice_mo\":0.01},\"features\":{\"sms\":true,\"a2p_sms\":true,\"voice\":true}},{\"country\":\"DE\",\"number\":\"4916096807228\",\"number_parsed\":\"+49 160 96807228\",\"fees\":{\"monthly\":{\"setup\":0,\"basic_charge\":0.5},\"annually\":{\"setup\":9.9,\"basic_charge\":238.8},\"sms_mo\":0,\"voice_mo\":0.01},\"features\":{\"sms\":true,\"a2p_sms\":true,\"voice\":true}},{\"country\":\"DE\",\"number\":\"4916096805767\",\"number_parsed\":\"+49 160 96805767\",\"fees\":{\"monthly\":{\"setup\":0,\"basic_charge\":0.5},\"annually\":{\"setup\":9.9,\"basic_charge\":238.8},\"sms_mo\":0,\"voice_mo\":0.01},\"features\":{\"sms\":true,\"a2p_sms\":true,\"voice\":true}},{\"country\":\"DE\",\"number\":\"4916096763487\",\"number_parsed\":\"+49 160 96763487\",\"fees\":{\"monthly\":{\"setup\":0,\"basic_charge\":0.5},\"annually\":{\"setup\":9.9,\"basic_charge\":238.8},\"sms_mo\":0,\"voice_mo\":0.01},\"features\":{\"sms\":true,\"a2p_sms\":true,\"voice\":true}}]}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 09:09:57 GMT",
+        "Server": "Apache",
+        "Upgrade": "h2",
+        "Connection": "Upgrade",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "number=4916096754993&payment_interval=monthly",
+      "url": "https://gateway.seven.io/api/numbers/order",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "post",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"success\":true,\"error\":null}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 09:09:58 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/numbers/active/4916096754993",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "get",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"country\":\"DE\",\"number\":\"4916096754993\",\"friendly_name\":\"\",\"billing\":{\"fees\":{\"setup\":0,\"basic_charge\":0.5,\"sms_mo\":0,\"voice_mo\":0},\"payment_interval\":\"monthly\"},\"features\":{\"sms\":true,\"a2p_sms\":false,\"voice\":true},\"forward_sms_mo\":{\"sms\":{\"number\":[],\"enabled\":false},\"email\":{\"address\":[],\"enabled\":false}},\"expires\":null,\"created\":\"2024-11-07 10:09:59\"}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 09:09:59 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/numbers/active",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "get",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"activeNumbers\":[{\"country\":\"DE\",\"number\":\"491716992343\",\"friendly_name\":\"7d4cd1d7-19c4-445f-a532-4d3f6ead943c\",\"billing\":{\"fees\":{\"setup\":19.9,\"basic_charge\":1,\"sms_mo\":0,\"voice_mo\":0},\"payment_interval\":\"monthly\"},\"features\":{\"sms\":true,\"a2p_sms\":false,\"voice\":true},\"forward_sms_mo\":{\"sms\":{\"number\":[],\"enabled\":false},\"email\":{\"address\":[],\"enabled\":false}},\"expires\":null,\"created\":\"2021-09-01 09:11:21\"},{\"country\":\"DE\",\"number\":\"4916096754993\",\"friendly_name\":\"\",\"billing\":{\"fees\":{\"setup\":0,\"basic_charge\":0.5,\"sms_mo\":0,\"voice_mo\":0},\"payment_interval\":\"monthly\"},\"features\":{\"sms\":true,\"a2p_sms\":false,\"voice\":true},\"forward_sms_mo\":{\"sms\":{\"number\":[],\"enabled\":false},\"email\":{\"address\":[],\"enabled\":false}},\"expires\":null,\"created\":\"2024-11-07 10:09:59\"}]}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 09:09:59 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  }
+]

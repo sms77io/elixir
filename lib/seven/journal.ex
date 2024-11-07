@@ -99,7 +99,7 @@ defmodule Seven.Journal do
   def replies(params) do
     qs = URI.encode_query(params)
 
-    case HTTPClient.get(@endpoint <> "/replies?#{qs}) do
+    case HTTPClient.get(@endpoint <> "/replies?#{qs}") do
       {:ok, %Response{status_code: 200, body: body}} ->
         {:ok, Enum.map(body, fn a -> new(a) end)}
 

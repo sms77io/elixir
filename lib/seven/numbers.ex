@@ -55,7 +55,7 @@ defmodule Seven.Numbers do
 
   @spec order(map()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def order(params) do
-    case HTTPClient.post(@endpoint, {:form, Map.to_list(params)}) do
+    case HTTPClient.post(@endpoint <> "/order", {:form, Map.to_list(params)}) do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -70,7 +70,7 @@ defmodule Seven.Numbers do
 
   @spec update(map()) :: {:ok, map()} | {:error, HTTPoison.Error | any()}
   def update(params) do
-    case HTTPClient.patch(@endpoint <> "/active/#{params.number}", {:form, Map.to_list(Map.delete(params, :number))}) do
+    case HTTPClient.patch(@endpoint <> "/active/#{params.number}", {:form, Map.to_list(Map.delete(params, "number"))}) do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
