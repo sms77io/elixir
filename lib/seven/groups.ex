@@ -8,7 +8,7 @@ defmodule Seven.Groups do
 
   @spec get(pos_integer()) :: {:ok, any()} | {:error, HTTPoison.Error | any()}
   def get(id) do
-    case HTTPClient.get(@endpoint <> "/" <> id) do
+    case HTTPClient.get(@endpoint <> "/#{id}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -40,7 +40,7 @@ defmodule Seven.Groups do
   def list(params) do
     qs = URI.encode_query(params)
 
-    case HTTPClient.get(@endpoint <> "?" <> qs) do
+    case HTTPClient.get(@endpoint <> "?#{qs}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
@@ -53,24 +53,26 @@ defmodule Seven.Groups do
     response
   end
 
-  @spec update(String.t()) :: {:ok, any()} | {:error, HTTPoison.Error | any()}
-  def update(name) do
-    case HTTPClient.patch(@endpoint, {:form, %{"name" => name}}) do
+  @spec update(map()) :: {:ok, any()} | {:error, HTTPoison.Error | any()}
+  def update(params) do
+    case HTTPClient.patch(@endpoint <> "/#{params.id}", {:form, Map.delete(params, "id")}) do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
     end
   end
 
-  @spec update!(String.t()) :: any()
-  def update!(name) do
-    {:ok, response} = update(name)
+  @spec update!(map()) :: any()
+  def update!(params) do
+    {:ok, response} = update(params)
     response
   end
 
   @spec delete(pos_integer(), boolean()) :: {:ok, any()} | {:error, HTTPoison.Error | any()}
   def delete(id, delete_contacts) do
-    case HTTPClient.delete(@endpoint <> "/" <> id, {:form, %{"delete_contacts" => delete_contacts}}) do
+    qs = URI.encode_query(%{"delete_contacts" => delete_contacts})
+
+    case HTTPClient.delete(@endpoint <> "/#{id}?#{qs}") do
       {:ok, %Response{status_code: 200, body: body}} -> {:ok, body}
       {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}

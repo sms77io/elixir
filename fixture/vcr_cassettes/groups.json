@@ -1,0 +1,139 @@
+[
+  {
+    "request": {
+      "options": [],
+      "body": "name=Elixir",
+      "url": "https://gateway.seven.io/api/groups",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "post",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"id\":28901,\"name\":\"Elixir\",\"members_count\":0,\"created\":\"2024-11-07 09:41:33\"}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:41:33 GMT",
+        "Server": "Apache",
+        "Upgrade": "h2",
+        "Connection": "Upgrade",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/groups/28901",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "get",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"id\":28901,\"name\":\"Elixir\",\"members_count\":0,\"created\":\"2024-11-07 09:41:33\"}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:41:33 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/groups?offset=&limit=",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "get",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\n    \"pagingMetadata\": {\n        \"offset\": 0,\n        \"count\": 27,\n        \"total\": 27,\n        \"limit\": 30,\n        \"has_more\": false\n    },\n    \"data\": [\n        {\n            \"id\": 18691,\n            \"name\": \"test\",\n            \"members_count\": 0,\n            \"created\": \"2024-06-04 13:32:10\"\n        },\n        {\n            \"id\": 18701,\n            \"name\": \"test\",\n            \"members_count\": 0,\n            \"created\": \"2024-06-06 11:39:25\"\n        },\n        {\n            \"id\": 18708,\n            \"name\": \"TestGroup\",\n            \"members_count\": 0,\n            \"created\": \"2024-06-07 12:27:17\"\n        },\n        {\n            \"id\": 18709,\n            \"name\": \"TestGroup\",\n            \"members_count\": 0,\n            \"created\": \"2024-06-07 12:29:11\"\n        },\n        {\n            \"id\": 18710,\n            \"name\": \"New Group Name\",\n            \"members_count\": 0,\n            \"created\": \"2024-06-07 12:31:21\"\n        },\n        {\n            \"id\": 18711,\n            \"name\": \"New Group Name\",\n            \"members_count\": 0,\n            \"created\": \"2024-06-07 12:33:19\"\n        },\n        {\n            \"id\": 27004,\n            \"name\": \"MyGroup\",\n            \"members_count\": 0,\n            \"created\": \"2024-10-15 13:24:15\"\n        },\n        {\n            \"id\": 27005,\n            \"name\": \"MyGroup\",\n            \"members_count\": 0,\n            \"created\": \"2024-10-15 13:31:22\"\n        },\n        {\n            \"id\": 27006,\n            \"name\": \"MyGroup\",\n            \"members_count\": 0,\n            \"created\": \"2024-10-15 13:32:05\"\n        },\n        {\n            \"id\": 27507,\n            \"name\": \"New Group Name\",\n            \"members_count\": 0,\n            \"created\": \"2024-10-22 10:45:38\"\n        },\n        {\n            \"id\": 27508,\n            \"name\": \"New Group Name\",\n            \"members_count\": 0,\n            \"created\": \"2024-10-22 10:49:43\"\n        },\n        {\n            \"id\": 27509,\n            \"name\": \"New Group Name\",\n            \"members_count\": 0,\n            \"created\": \"2024-10-22 10:52:10\"\n        },\n        {\n            \"id\": 27546,\n            \"name\": \"New Group Name\",\n            \"members_count\": 0,\n            \"created\": \"2024-10-22 11:06:34\"\n        },\n        {\n            \"id\": 27547,\n            \"name\": \"New Group Name\",\n            \"members_count\": 0,\n            \"created\": \"2024-10-22 11:08:26\"\n        },\n        {\n            \"id\": 28888,\n            \"name\": \"Elixir\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:28:53\"\n        },\n        {\n            \"id\": 28889,\n            \"name\": \"Elixir\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:30:21\"\n        },\n        {\n            \"id\": 28890,\n            \"name\": \"Elixir\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:30:55\"\n        },\n        {\n            \"id\": 28891,\n            \"name\": \"Elixir\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:31:31\"\n        },\n        {\n            \"id\": 28892,\n            \"name\": \"Elixir\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:33:56\"\n        },\n        {\n            \"id\": 28893,\n            \"name\": \"Elixir\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:34:27\"\n        },\n        {\n            \"id\": 28894,\n            \"name\": \"Elixir New\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:35:14\"\n        },\n        {\n            \"id\": 28895,\n            \"name\": \"Elixir New\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:36:31\"\n        },\n        {\n            \"id\": 28896,\n            \"name\": \"Elixir New\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:36:55\"\n        },\n        {\n            \"id\": 28897,\n            \"name\": \"Elixir New\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:37:44\"\n        },\n        {\n            \"id\": 28898,\n            \"name\": \"Elixir New\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:38:03\"\n        },\n        {\n            \"id\": 28899,\n            \"name\": \"Elixir New\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:39:22\"\n        },\n        {\n            \"id\": 28901,\n            \"name\": \"Elixir\",\n            \"members_count\": 0,\n            \"created\": \"2024-11-07 09:41:33\"\n        }\n    ]\n}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:41:33 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "id=28901&name=Elixir+New",
+      "url": "https://gateway.seven.io/api/groups/28901",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "patch",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"id\":28901,\"name\":\"Elixir New\",\"members_count\":0,\"created\":\"2024-11-07 09:41:33\"}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:41:33 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  },
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/groups/28901?delete_contacts=true",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "delete",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "{\"success\":true}",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:41:34 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  }
+]
