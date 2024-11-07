@@ -32,6 +32,7 @@ defmodule Seven.Analytics do
     :inbound,
     :label, # TODO?
     :mnp,
+    :rcs,
     :sms,
     :usage_eur,
     :voice,
@@ -46,6 +47,7 @@ defmodule Seven.Analytics do
       inbound: attributes[:inbound],
       label: attributes[:label], # TODO?
       mnp: attributes[:mnp],
+      rcs: attributes[:rcs],
       sms: attributes[:sms],
       usage_eur: attributes[:usage_eur],
       voice: attributes[:voice],
@@ -57,12 +59,8 @@ defmodule Seven.Analytics do
     qs = URI.encode_query(params)
 
     case HTTPClient.get(@endpoint <> group_by <> "?" <> qs) do
-      {:ok, %Response{status_code: 200, body: body}} ->
-        {:ok, Enum.map(body, fn a -> new(a) end)}
-
-      {:ok, %Response{status_code: _, body: body}} ->
-        {:error, body}
-
+      {:ok, %Response{status_code: 200, body: body}} -> {:ok, Enum.map(body, fn a -> new(a) end)}
+      {:ok, %Response{status_code: _, body: body}} -> {:error, body}
       {:error, error} -> {:error, error}
     end
   end
@@ -75,27 +73,21 @@ defmodule Seven.Analytics do
 
   @spec groupedByCountry!(map()) :: [map()]
   def groupedByCountry!(params) do
-    groupedBy!("country", params)
+    get!("country", params)
   end
 
   @spec groupedByDate!(map()) :: [map()]
   def groupedByDate!(params) do
-    groupedBy!("date", params)
+    get!("date", params)
   end
 
   @spec groupedByLabel!(map()) :: [map()]
   def groupedByLabel!(params) do
-    groupedBy!("label", params)
+    get!("label", params)
   end
 
   @spec groupedBySubaccount!(map()) :: [map()]
   def groupedBySubaccount!(params) do
-     groupedBy!("subaccount", params)
-  end
-
-  @spec groupedBy!(group_by, map()) :: [map()]
-  def groupedBy!(group_by, params) do
-    {:ok, analytics} = get!(group_by, params)
-    analytics
+    get!("subaccount", params)
   end
 end

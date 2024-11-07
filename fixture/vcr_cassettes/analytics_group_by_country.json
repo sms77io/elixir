@@ -1,0 +1,29 @@
+[
+  {
+    "request": {
+      "options": [],
+      "body": "",
+      "url": "https://gateway.seven.io/api/analytics/country?",
+      "headers": {
+        "Accept": "application/json",
+        "X-Api-Key": "***",
+        "SentWith": "elixir-test"
+      },
+      "method": "get",
+      "request_body": ""
+    },
+    "response": {
+      "binary": false,
+      "type": "ok",
+      "body": "[{\"country\":\"DE\",\"sms\":0,\"rcs\":1,\"voice\":1,\"hlr\":1,\"mnp\":2,\"inbound\":12,\"usage_eur\":0.1475},{\"country\":\"\",\"sms\":0,\"rcs\":0,\"voice\":0,\"hlr\":0,\"mnp\":0,\"inbound\":0,\"usage_eur\":1}]",
+      "headers": {
+        "Date": "Thu, 07 Nov 2024 08:03:44 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "status_code": 200
+    }
+  }
+]
